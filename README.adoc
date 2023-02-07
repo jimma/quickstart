@@ -1,6 +1,6 @@
 include::shared-doc/attributes.adoc[]
 
-:toc:
+toc:
 :toclevels: 4
 :numbered:
 

@@ -186,9 +186,9 @@
                         <artifactId>wildfly-maven-plugin</artifactId>
                         <version>${version.wildfly.maven.plugin}</version>
                         <configuration>
-                            <glow>
+                            <discover-provisioning-info>
                                 <version>${version.server}</version>
-                            </glow>
+                            </discover-provisioning-info>
                             <!-- deploys the quickstart on root web context -->
                             <runtimeName>ROOT.war</runtimeName>
                         </configuration>
@@ -232,10 +232,10 @@
                         <artifactId>wildfly-maven-plugin</artifactId>
                         <version>${version.wildfly.maven.plugin}</version>
                         <configuration>
-                            <glow>
+                            <discover-provisioning-info>
                                 <version>${version.server}</version>
-                                <execution-context>cloud</execution-context>
-                            </glow>
+                                <context>cloud</context>
+                            </discover-provisioning-info>
                             <filename>ROOT.war</filename>
                         </configuration>
                         <executions>

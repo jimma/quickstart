@@ -46,7 +46,7 @@
         <!-- The versions for BOMs, Dependencies and Plugins -->
         <version.server.bom>28.0.1.Final</version.server.bom>
         <version.server>29.0.0.Final</version.server>
-        <version.wildfly.maven.plugin>4.2.1.Final-SNAPSHOT</version.wildfly.maven.plugin>
+        <version.wildfly.maven.plugin>4.2.0.Alpha2-SNAPSHOT</version.wildfly.maven.plugin>
     </properties>
 
     <repositories>

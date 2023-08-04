@@ -46,9 +46,8 @@
     <properties>
         <!-- The versions for BOMs, Dependencies and Plugins -->
         <version.server.bom>28.0.1.Final</version.server.bom>
-        <version.server>28.0.1.Final</version.server>
-        <version.wildfly.maven.plugin>4.1.0.Final</version.wildfly.maven.plugin>
-        <version.cloud.fp>3.0.0.Final</version.cloud.fp>
+        <version.server>29.0.0.Final</version.server>
+        <version.wildfly.maven.plugin>4.2.0.Alpha2-SNAPSHOT</version.wildfly.maven.plugin>
     </properties>
 
     <repositories>
@@ -221,14 +220,10 @@
                         <artifactId>wildfly-maven-plugin</artifactId>
                         <version>${version.wildfly.maven.plugin}</version>
                         <configuration>
-                            <feature-packs>
-                                <feature-pack>
-                                    <location>org.wildfly:wildfly-galleon-pack:${version.server}</location>
-                                </feature-pack>
-                            </feature-packs>
-                            <layers>
-                                <layer>cloud-server</layer>
-                            </layers>
+                            <discover-provisioning-info>
+                                <version>${version.server}</version>
+                            </discover-provisioning-info>
+                            <!-- deploys the quickstart on root web context -->
                             <runtimeName>ROOT.war</runtimeName>
                         </configuration>
                         <executions>
@@ -276,17 +271,12 @@
                         <artifactId>wildfly-maven-plugin</artifactId>
                         <version>${version.wildfly.maven.plugin}</version>
                         <configuration>
-                            <feature-packs>
-                                <feature-pack>
-                                    <location>org.wildfly:wildfly-galleon-pack:${version.server}</location>
-                                </feature-pack>
-                                <feature-pack>
-                                    <location>org.wildfly.cloud:wildfly-cloud-galleon-pack:${version.cloud.fp}</location>
-                                </feature-pack>
-                            </feature-packs>
-                            <layers>
-                                <layer>cloud-server</layer>
-                            </layers>
+                            <discover-provisioning-info>
+                                <version>${version.server}</version>
+                                <context>cloud</context>
+                            </discover-provisioning-info>
+                            <!--This doesn't work with cloud context
+                            <runtimeName>helloworld-ws.war</runtimeName-->
                             <filename>ROOT.war</filename>
                         </configuration>
                         <executions>
